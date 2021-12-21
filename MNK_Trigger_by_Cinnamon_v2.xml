@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder FFXIVJobFilterEnabled="True" FFXIVJobFilter="524290" Id="63ecf2f6-b246-412f-8efd-b43281a08e2d" Name="MNK Trigger By:Cinnamon Sugar" Enabled="true">
+    <Folders>
+      <Folder Id="8c09c052-9257-4e4e-84c2-99f6908aa42a" Name="2 监控 Buff/Dot Timers" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="破碎拳 Demolish Timer" Id="46816d44-e493-48a2-94f7-6629619879f1" RegularExpression="^.{14}(.*?)1A:F6:(?&lt;demo&gt;[^:]+?):.{14}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Demolishtime" VariableExpression="${_systemtimems}+(18*1000)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="双掌打 Disciplined Fist Timer" Id="2c8c93b6-bafe-484d-99f0-a158f7736c9b" RegularExpression="^.{14}(.*?)1A:BB9:(?&lt;df&gt;[^:]+?):.{14}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="DFtime" VariableExpression="${_systemtimems}+(15*1000)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="连击 Leaden Fist" Id="8291207a-9919-435b-835c-6d37395ed758" RegularExpression="^.{14} (.*?) (?&lt;lfgain&gt;1[AE]):745:(?&lt;lf&gt;[^:]+?):[^:]*:.{8}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Leaden Fist" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${lfgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Leaden Fist" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${lfgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="d223550e-a9d1-45b3-ad52-4532544926f2" Name="1 身形 Forms" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="贰之型 Into Raptor Form" Id="88a00780-6061-45ad-adb9-0cdb27254e61" RegularExpression="^.{14}(.*?)1A:6C:(?&lt;form&gt;[^:]+?):.{14}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="壹之型 Into Opo-opo Form" Id="8ae238a7-aca7-4178-9362-0471a260c729" RegularExpression="^.{14}(.*?)1A:6B:(?&lt;form&gt;[^:]+?):.{14}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="叁之型 Into Coeurl Form" Id="0fbf3452-eb32-42f9-bd95-523cacd00507" RegularExpression="^.{14}(.*?)1A:6D:(?&lt;form&gt;[^:]+?):.{14}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="49c7772d-e075-4e7c-a54a-74e76748e6dd" Name="0 设置 Setup" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Sequential="True" Name="设置提示信息及位置" Id="627b65e7-0f97-4098-b5f0-f67df6e3c003" RegularExpression="^.{14} [^:]*:0038::!MonkStart" DebugLevel="Warning" EditAutofire="True">
+            <Actions>
+              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraName="开始" TextAuraExpression="Monk Start!" TextAuraXIniExpression="698" TextAuraYIniExpression="811" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="Microsoft YaHei" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" AuraImageMode="CenterImage" TextAuraEffect="Bold" TextAuraFontSize="72" TextAuraForeground="Red" TextAuraName="Buff/Dot" TextAuraExpression="可" TextAuraXIniExpression="1616" TextAuraYIniExpression="699" TextAuraWIniExpression="334" TextAuraHIniExpression="171" TextAuraOIniExpression="100" TextAuraOTickExpression="100*(${numeric:min((${var:Demolishtime}-${_systemtimems}-${var:DotTime}),(${var:DFtime}-${_systemtimems}-${var:BuffTime}))}&gt;0)*(1/10000*${numeric:min((${var:Demolishtime}-${_systemtimems}-${var:DotTime}),(${var:DFtime}-${_systemtimems}-${var:BuffTime}))})" TextAuraUseOutline="True" TextAuraFontName="Microsoft YaHei UI Semibold" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" AuraImageMode="CenterImage" TextAuraEffect="Bold" TextAuraFontSize="36" TextAuraForeground="Red" TextAuraName="RoF Display" TextAuraExpression="下次红莲：${var:RoF Display}" TextAuraXIniExpression="946" TextAuraYIniExpression="588" TextAuraWIniExpression="312" TextAuraHIniExpression="75" TextAuraOIniExpression="100" TextAuraFontName="Microsoft YaHei UI Semibold" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="开始" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="2000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="输入&quot;/e !MonkStart&quot;启动 &quot;/e !MonkEnd&quot;关闭" Id="8a39cf69-5067-4c0d-8615-5d223cf09bcc" RegularExpression="">
+            <Actions />
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="初始参数" Id="712b74c0-0def-4e1f-85b5-7fef0af7dd40" RegularExpression="^.{14} [^:]*:0038::!MonkStart" DebugLevel="Warning">
+            <Actions>
+              <Action OrderNumber="-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="21fe5e5e-69c6-4f1a-8542-0f50203b086d" TriggerForce="regexp,conditions" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="Blitz" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="RoFcount" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableOp="SetString" VariableName="RoF小" VariableExpression="小" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableOp="SetString" VariableName="RoF大" VariableExpression="大" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="ResetTime" VariableExpression="-8000" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="BuffTime" VariableExpression="7000" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="DotTime" VariableExpression="7000" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="12" VariableOp="SetString" VariableName="RoF Display" VariableExpression="${var:RoF大}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount} " ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Sequential="True" Name="设置图片位置到对应GCD技能" Id="8fd12960-9924-4abe-a67c-929e1368ebe0" RegularExpression="^.{14} [^:]*:0038::!MonkStart" DebugLevel="Warning" EditAutofire="True">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetString" VariableName="pic" VariableExpression="C:\Program Files (x86)\Advanced Combat Tracker\Triggernometry\武僧combo\ComboGIFgreen.gif" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="双龙脚 Dragon Kick" AuraImage="${var:pic}" AuraXIniExpression="1531" AuraYIniExpression="1254" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="((${var:Leaden Fist}&lt;1)*${var:Opo-opo Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" AuraImageMode="Zoom" AuraName="连击 Bootshine" AuraImage="${var:pic}" AuraXIniExpression="1913" AuraYIniExpression="1255" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="((${var:Leaden Fist}=1)*${var:Opo-opo Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False">
+                <Condition Enabled="false" Grouping="And" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" AuraImageMode="Zoom" AuraName="双掌打 Twin Snakes" AuraImage="${var:pic}" AuraXIniExpression="1589" AuraYIniExpression="1223" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="(((${var:DFtime}-${_systemtimems})&lt;${var:BuffTime})*${var:Raptor Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" DebugLevel="Warning">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" AuraImageMode="Zoom" AuraName="正拳 True Strike" AuraImage="${var:pic}" AuraXIniExpression="1975" AuraYIniExpression="1225" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="(((${var:DFtime}-${_systemtimems})&gt;${var:BuffTime})*${var:Raptor Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" DebugLevel="Warning">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" AuraImageMode="Zoom" AuraName="破碎拳 Demolish" AuraImage="${var:pic}" AuraXIniExpression="1649" AuraYIniExpression="1257" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="(((${var:Demolishtime}-${_systemtimems})&lt;${var:DotTime})*${var:Coeurl Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" DebugLevel="Warning">
+                <Condition Enabled="false" Grouping="And" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" AuraImageMode="Zoom" AuraName="崩拳 Snap Punch" AuraImage="${var:pic}" AuraXIniExpression="2031" AuraYIniExpression="1258" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="(((${var:Demolishtime}-${_systemtimems})&gt;${var:DotTime})*${var:Coeurl Form})*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" DebugLevel="Warning">
+                <Condition Enabled="false" Grouping="And" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" AuraImageMode="Zoom" AuraName="必杀技 Masterful Blitz" AuraImage="${var:pic}" AuraXIniExpression="1975" AuraYIniExpression="1290" AuraWIniExpression="60" AuraHIniExpression="60" AuraOIniExpression="100" AuraOTickExpression="${var:BlitzFlag}*100" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" DebugLevel="Warning">
+                <Condition Enabled="false" Grouping="And" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="936c3419-0e69-4eef-bf5f-ace4be33d43d" Name="Debug自用 勿动" Enabled="false">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="Test End" Id="8573597a-2e0b-4e1c-b5a2-9e3c42485413" RegularExpression="^.{14} [^:]*:0038::!MonkEnd">
+            <Actions>
+              <Action OrderNumber="1" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Opo" TextAuraExpression="Opo: ${var:Opo-opo Form}" TextAuraXIniExpression="285" TextAuraYIniExpression="680" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Leaden Fist" TextAuraExpression="Leaden Fist: ${var:Leaden Fist}" TextAuraXIniExpression="2300" TextAuraYIniExpression="550" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Demolish" TextAuraExpression="Demolish: ${numeric:${var:Demolishtime}-${_systemtimems}}" TextAuraXIniExpression="2274" TextAuraYIniExpression="724" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Disciplined Fist" TextAuraExpression="Disciplined Fist: ${numeric:${var:DFtime}-${_systemtimems}}" TextAuraXIniExpression="2242" TextAuraYIniExpression="975" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Raptor" TextAuraExpression="Raptor: ${var:Raptor Form}" TextAuraXIniExpression="236" TextAuraYIniExpression="888" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="coeurl" TextAuraExpression="Coeurl: ${var:Coeurl Form}" TextAuraXIniExpression="388" TextAuraYIniExpression="496" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Nadi" TextAuraExpression="Lunar: ${var:Lunar} Solar: ${var:Solar} PB: ${name}" TextAuraXIniExpression="1195" TextAuraYIniExpression="175" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" TextAuraOp="DeactivateAura" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="test" TextAuraExpression="${numeric:(1+1)%2}" TextAuraXIniExpression="2087" TextAuraYIniExpression="148" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Test Start" Id="ee760cc7-c65d-4e6f-885b-1498503eec62" RegularExpression="^.{14} [^:]*:0038::!MonkStart">
+            <Actions>
+              <Action OrderNumber="1" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Opo" TextAuraExpression="Opo: ${var:Opo-opo Form}" TextAuraXIniExpression="285" TextAuraYIniExpression="680" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Leaden Fist" TextAuraExpression="Leaden Fist: ${var:Leaden Fist}" TextAuraXIniExpression="2300" TextAuraYIniExpression="550" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Demolish" TextAuraExpression="Demolish: ${numeric:${var:Demolishtime}-${_systemtimems}}" TextAuraXIniExpression="2274" TextAuraYIniExpression="724" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Disciplined Fist" TextAuraExpression="Disciplined Fist: ${numeric:${var:DFtime}-${_systemtimems}}" TextAuraXIniExpression="2242" TextAuraYIniExpression="975" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Raptor" TextAuraExpression="Raptor: ${var:Raptor Form}" TextAuraXIniExpression="236" TextAuraYIniExpression="888" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="coeurl" TextAuraExpression="Coeurl: ${var:Coeurl Form}" TextAuraXIniExpression="388" TextAuraYIniExpression="496" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="Nadi" TextAuraExpression="Lunar: ${var:Lunar} Solar: ${var:Solar} PB: ${var:name}" TextAuraXIniExpression="1195" TextAuraYIniExpression="175" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" TextAuraEffect="Bold" TextAuraFontSize="26.25" TextAuraForeground="Red" TextAuraName="test" TextAuraExpression="Blitz Flag ${var:BlitzFlag} ${var:BlitzCheck}" TextAuraXIniExpression="846" TextAuraYIniExpression="915" TextAuraWIniExpression="534" TextAuraHIniExpression="148" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="微软雅黑" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="e6e3353e-ccbd-4bb1-9ab6-02679e84ce07" Name="3 必！杀！技！ Blitz" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="阴阳 Nadi" Id="0bb6be07-47f8-4565-a717-017f1463e27e" RegularExpression="^.{14} Gauge 1F:[^:]*:[^:]*:(?&lt;nadi&gt;[^:]+?):.{6}(?&lt;BlitzCheck&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Lunar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="00" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="400" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Solar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="200" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="00" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Lunar" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="200" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="600" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="Solar" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="400" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${nadi}" ExpressionTypeL="String" ExpressionR="600" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="BlitzFlag" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${BlitzCheck}" ExpressionTypeL="String" ExpressionR="4E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${BlitzCheck}" ExpressionTypeL="String" ExpressionR="4B" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="BlitzFlag" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="274a63ee-9086-4fb6-92cb-6476e8a67730" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${BlitzCheck}" ExpressionTypeL="String" ExpressionR="4B" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${BlitzCheck}" ExpressionTypeL="String" ExpressionR="4E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="BlitzFlag" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${BlitzCheck}" ExpressionTypeL="String" ExpressionR="00" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="震脚 Perfect Balance" Id="e7f54bac-d0ad-4c9d-81d6-135c90a65821" RegularExpression="^.{14}(.*?)(?&lt;pbgain&gt;1[AE]):6E:(?&lt;pb&gt;[^:]+?):[^:]*:.{8}:(?&lt;name&gt;[^:]+?):.{8}:(?&lt;name&gt;[^:]+?):(?&lt;pbstack&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Perfect Balance" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${pbgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Perfect Balance" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${pbgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Blitz" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionGroup Enabled="true" Grouping="And">
+                    <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    <ConditionGroup Enabled="true" Grouping="Or">
+                      <ConditionSingle Enabled="true" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:BuffTime}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                      <ConditionSingle Enabled="true" ExpressionL="${var:Demolishtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:DotTime}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                    </ConditionGroup>
+                    <ConditionGroup Enabled="true" Grouping="Or">
+                      <ConditionGroup Enabled="true" Grouping="And">
+                        <ConditionSingle Enabled="true" ExpressionL="${var:Solar}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                        <ConditionSingle Enabled="true" ExpressionL="${var:Lunar}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      </ConditionGroup>
+                      <ConditionGroup Enabled="true" Grouping="And">
+                        <ConditionSingle Enabled="true" ExpressionL="${var:Solar}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                        <ConditionSingle Enabled="true" ExpressionL="${var:Lunar}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                      </ConditionGroup>
+                    </ConditionGroup>
+                  </ConditionGroup>
+                  <ConditionGroup Enabled="true" Grouping="And">
+                    <ConditionSingle Enabled="false" ExpressionL="${var:RoFcount}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    <ConditionSingle Enabled="true" ExpressionL="${var:Solar}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    <ConditionSingle Enabled="true" ExpressionL="${var:Lunar}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  </ConditionGroup>
+                  <ConditionGroup Enabled="false" Grouping="And">
+                    <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    <ConditionSingle Enabled="true" ExpressionL="${var:Solar}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                    <ConditionSingle Enabled="true" ExpressionL="${var:Lunar}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  </ConditionGroup>
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="Blitz" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${pbgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8ae238a7-aca7-4178-9362-0471a260c729" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Coeurl Form}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${numeric:${pbstack}}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="0fbf3452-eb32-42f9-bd95-523cacd00507" TriggerForce="regexp,conditions" ActionType="Trigger">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Raptor Form}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${numeric:${pbstack}}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="88a00780-6061-45ad-adb9-0cdb27254e61" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Opo-opo Form}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${numeric:${pbstack}}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Blitz}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Sequential="True" Name="红莲 Riddle of Fire" Id="9949d450-4b0c-4b58-8513-db7fe12b9820" RegularExpression="^.{14}(.*?)(?&lt;RoFgain&gt;1[AE]):49D:[^:]*:[^:]*:.{8}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="RoF" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${RoFgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="RoF" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${RoFgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="RoFcount" VariableExpression="(${var:RoFcount}+1)%2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${RoFgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableOp="SetString" VariableName="RoF Display" VariableExpression="小" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount} " ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableOp="SetString" VariableName="RoF Display" VariableExpression="大" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount} " ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="切换大小红莲 Reset RoF" Id="6e28b3a0-de19-43d2-aff7-501b4d45fecf" RegularExpression="^.{14} [^:]*:0038::!Reset RoF">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="RoFcount" VariableExpression="(${var:RoFcount}+1)%2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${RoFgain}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetString" VariableName="RoF Display" VariableExpression="${var:RoF小}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount} " ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetString" VariableName="RoF Display" VariableExpression="${var:RoF大}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:RoFcount} " ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="9da40d27-4f99-44d0-9f1c-51d5db5efc75" Name="5 重置 Deactivation" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Source="None" Name="死亡 Death" Id="21fe5e5e-69c6-4f1a-8542-0f50203b086d" RegularExpression="^.{14} 19:(?&lt;name&gt;[^:]+?) was defeated by">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Leaden Fist" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="DFtime" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="Demolishtime" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="Solar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="BlitzFlag" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="Blitz" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="Lunar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="关闭 Monk End" Id="b95b5631-8c76-457e-9260-a62d9d29c5d5" RegularExpression="^.{14} [^:]*:0038::!MonkEnd">
+            <Actions>
+              <Action OrderNumber="-1" VariableName="Opo-opo Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableName="Perfect Balance" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" VariableName="DFtime" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableName="Demolishtime" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableName="Leaden Fist" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableName="Solar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" VariableName="Lunar" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" VariableName="RoFcount" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="13" VariableName="RoF Display" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="13" AuraOp="DeactivateAura" AuraName="双掌打 Twin Snakes" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="15" AuraOp="DeactivateAura" AuraName="崩拳 Snap Punch" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="15" AuraOp="DeactivateAura" AuraName="双龙脚 Dragon Kick" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="16" AuraOp="DeactivateAura" AuraName="破碎拳 Demolish" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="16" AuraOp="DeactivateAura" AuraName="连击 Bootshine" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="17" AuraOp="DeactivateAura" AuraName="正拳 True Strike" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="18" AuraOp="DeactivateAura" AuraName="必杀技 Masterful Blitz" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="19" TextAuraOp="DeactivateAllAura" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="20" VariableName="Blitz" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="21" VariableName="BlitzFlag" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Source="None" Name="重置身形 Clear Forms" Id="274a63ee-9086-4fb6-92cb-6476e8a67730" RegularExpression="">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Opo-opo Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="Coeurl Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="Raptor Form" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="205be42d-ee5f-47c2-9165-56ea39d4f9a3" Name="4 无相身形 Formless Fist" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="无相身形 Formless Fist" Id="d8fec699-d195-4bbf-a3cd-6e0a36f6fc3b" RegularExpression="^.{14} (.*?) (?&lt;ffgain&gt;1[AE]):9D1:(?&lt;ff&gt;[^:]+?):[^:]*:.{8}:(?&lt;name&gt;[^:]+?):">
+            <Actions>
+              <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8ae238a7-aca7-4178-9362-0471a260c729" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="10" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="false" ExpressionL="${_duration}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="false" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="-10000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="false" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${ffgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="false" ExpressionL="${var:Demolishtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="-10000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="false" ExpressionL="${var:Leaden Fist}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="88a00780-6061-45ad-adb9-0cdb27254e61" TriggerForce="regexp,conditions" Enabled="False" ActionType="Trigger" ExecutionDelayExpression="10" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${_duration}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="false" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="3000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="true" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${ffgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="0fbf3452-eb32-42f9-bd95-523cacd00507" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="10" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="false" ExpressionL="${_duration}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="false" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="4000" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="false" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${ffgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Demolishtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:ResetTime}" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Demolishtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:DotTime}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="88a00780-6061-45ad-adb9-0cdb27254e61" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="10" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="false" ExpressionL="${_duration}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:BuffTime}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                  <ConditionSingle Enabled="false" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${ffgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:ResetTime}" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8ae238a7-aca7-4178-9362-0471a260c729" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="10" Asynchronous="False">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="false" ExpressionL="${_duration}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:DFtime}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:BuffTime}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="false" ExpressionL="${_incombat}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${ffgain}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Demolish}-${_systemtimems}" ExpressionTypeL="Numeric" ExpressionR="${var:DotTime}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:Leaden Fist}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
