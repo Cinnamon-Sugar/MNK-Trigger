@@ -1,4 +1,4 @@
-# MNK-Trigger
+# MNK Trigger! by Cinnamon Sugar
 西内萌的6.0芒克触发器！
 ## 它可以做什么
 - 告诉你下一个GCD打什么技能
